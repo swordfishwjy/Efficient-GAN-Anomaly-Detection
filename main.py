@@ -7,6 +7,7 @@ import os
 import shutil
 import urllib3
 import zipfile
+import time
 
 import data
 
@@ -67,4 +68,12 @@ if __name__ == "__main__":
     parser.add_argument('--d', nargs="?", default=1, type=int, help='degree for the L norm')
     parser.add_argument('--rd', nargs="?", default=42, type=int, help='random_seed')
 
+    startTime = time.time()
+    print("Start time: {}.".format(startTime))
+
     run(parser.parse_args())
+
+    endTime = time.time()
+    print("End time: {}.".format(endTime))
+    elapsedTime = endTime - startTime
+    print("elapsedTime: {}.".format(elapsedTime))
